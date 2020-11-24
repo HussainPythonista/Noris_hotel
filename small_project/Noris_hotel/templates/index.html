@@ -1,31 +1,37 @@
 <!-- This Html Page contains changeable tags i.e.., dynamic content -->
 {% extends 'static.html' %}
 {% load static %}
-{% block content %}
-{% block avalible %}
-{% endblock %}
+{% static "images" as baseUrl %}
 
-{% for dest in dests %}
+{% block content %}
+
+
+{% for room in rooms %}
 								
 							
 								
-<div class="container-fluid">
+<div class="destination item">
     <div class="destination_image">
-        <img src="{{dest.img.url}}" alt="">
-                
-        <!--div class="spec_offer text-center"><a href="#">Special Offer</a></div>
         
-    </div-->
+        <img src="{{room.image.url}}" alt="">
+        
+        {% if  room.offer %}
+            
+        
+                
+        <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+        {% endif %}
+    </div>
         
     <div class="destination_content">
-        <div class="destination_title"><a href=""></a>
-        </div>
+        
+        
         <div class="destination_subtitle">
-            <p></p>
+            
         </div>
-        <!--div class="destination_price">From ${{dest.price}}</div--->
+        <div class="destination_price">From ${{room.start_price}}</div>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Book {{room.type_room}}</button>
     </div>
 </div>
 {% endfor %}
 {% endblock content %}
-

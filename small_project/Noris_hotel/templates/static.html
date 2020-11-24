@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-	<title>Travello</title>
+	<title>Noris</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Travello template project">
@@ -39,15 +39,16 @@
 										<li class="active"><a href="index.html">Home</a></li>
 										<li><a href="contact.html">Contact</a></li>
 										{% if  user.is_authenticated %}
-										<li><a href="actions/logout"><b> Hello,{{ user.first_name }}</b></a></li>
-										<li><a href="actions/logout">Logout</a></li>
+										<li><a href="{{ user.id }}"> Hello,{{ user.first_name }}</a></li>
+										<li><a href="account/logout">Logout</a></li>
 										{% else %}
-										<li><a href="actions/register">Register</a></li>
-										<li><a href="actions/login">Login</a></li>
+										<li><a href="account/register">Register</a></li>
+										<li><a href="account/login">Login</a></li>
 										{% endif %}
+										<button type="button" class="btn btn-primary btn-lg">Book Now</button>
 									</ul>
 								</nav>
-								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+								
 
 								<!-- Hamburger -->
 
@@ -76,7 +77,7 @@
 
 		<div class="menu">
 			<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-				<div class="menu_logo"><a href="index.html">Travello</a></div>
+				<div class="menu_logo"><a href="index.html">Noris Hotel</a></div>
 				<div class="menu_close_container ml-auto">
 					<div class="menu_close">
 						<div></div>
@@ -228,7 +229,7 @@
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 										<div class="intro_icon"><img src="{% static 'images/beach.svg' %}" alt=""></div>
 										<div class="intro_content">
-											<div class="intro_title">Top Destinations</div>
+											<div class="intro_title">Elite Rooms</div>
 											<div class="intro_subtitle">
 												<p>Nulla pretium tincidunt felis, nec.</p>
 											</div>
